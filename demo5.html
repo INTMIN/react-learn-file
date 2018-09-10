@@ -10,18 +10,33 @@
     <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
     <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
     <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
-        <div id="example"></div>
-        <!-- 由于里面不能打注释所以就没写备注 -->
-        <script type="text/babel">
+    <div id="example"></div>
+    <div id="test"></div>
+    <!-- 需要注意的是render里面的内容最后的结尾需要加一个 -->
+    <script type="text/babel">
+        const i = 1;
+        const style1 = {
+            fontSize:100,
+            color:'#ff0000'
+        };
             ReactDOM.render(
               <div>
                 <h1>hello</h1>
-                <h2>{1+1}</h2>
+                {/*这是添加注解的方式*/}
+                <h1>{1+1}</h1>
+                <h3>{i == 1 ? 'True' : 'False'}</h3>
+                {/*可以在 JSX 中使用 JavaScript 表达式。表达式写在花括号 {} 中*/}
+                <h1 style = {style1}>这是一个测试文件</h1>
+                {/*h1只是一级标题大小，并不是唯一*/}
                 <p data-myattribute = "somevalue">I like react</p>
               </div>,
               document.getElementById('example')
           );
-        </script>
-    </body>
+          {/*组件的渲染*/}
+        var myDivElement = <div className="foo" />;
+        ReactDOM.render(myDivElement, document.getElementById('test'));
 
-    </html>
+        </script>
+</body>
+
+</html>
