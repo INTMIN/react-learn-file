@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>使用的react.conmponent 的ES6类实现的时钟</title>
+
+</head>
+
+<body>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
+    </head>
+
+    <body>
+
+        <div id="example"></div>
+        <script type="text/babel">
+          class Clock extends React.Component {
+              render(){
+                  return(
+                      <div>
+                      <h1>hello</h1>
+                      <h2>现在的时间是 {this.props.date.toLocaleTimeString()}.</h2>
+                      </div>
+                  )
+              };
+          }
+        function tick() {
+            ReactDOM.render(
+                <Clock date={new Date()} />,
+                document.getElementById('example')
+            );
+        }
+        setInterval(tick,1000);
+        </script>
+    </body>
+
+    </html>
