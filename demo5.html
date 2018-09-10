@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>jsx语法</title>
+
+</head>
+
+<body>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
+        <div id="example"></div>
+        <!-- 由于里面不能打注释所以就没写备注 -->
+        <script type="text/babel">
+            ReactDOM.render(
+              <div>
+                <h1>hello</h1>
+                <h2>{1+1}</h2>
+                <p data-myattribute = "somevalue">I like react</p>
+              </div>,
+              document.getElementById('example')
+          );
+        </script>
+    </body>
+
+    </html>
