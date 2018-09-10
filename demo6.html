@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>react组件</title>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
+   
+</head>
+
+<body>
+    <div id="example"></div>
+    <div id="test"></div>
+    <!-- 需要注意的是render里面的内容最后的结尾需要加一个 -->
+    <script type="text/babel">
+        {/*组件的封装 实际上就是函数定义组件*/}    
+        function HelloMessage(props) {
+            return <h1>Hello {props.name}</h1>;
+        }
+        {/*const element = <HelloMessage /> 为用户自定义的组件*/}
+        {/*注意，原生 HTML 元素名以小写字母开头，而自定义的 React 类名以大写字母开头，比如 HelloMessage 不能写成 helloMessage。除此之外还需要注意组件类只能包含一个顶层标签，否则也会报错。*/}
+        const element = <HelloMessage name="MIN"/>;
+        ReactDOM.render(
+            element,
+            document.getElementById('example')
+        );
+
+        function Name(props) {
+            return <h1>网站的名称是：{props.name}</h1>;    
+        }
+        function Url(props) {
+            return <h1>网站的地址是：{props.url}</h1>;
+        }
+        function Othername(props) {
+            return <h1>网站的小名是：{props.othername}</h1>;
+        }
+        function App() {
+            return (
+                <div>
+                    <Name name="reactJS" />
+                    <Url url="react.com" />
+                    <Othername othername="reactjs" />
+                </div>
+            );
+        }
+        ReactDOM.render(
+            <App />,
+            document.getElementById('test')
+        );
+    </script>
+</body>
+
+</html>
