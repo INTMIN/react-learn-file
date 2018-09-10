@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>jsx语法</title>
-
-</head>
-
-<body>
     <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
     <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
     <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
+   
+</head>
+
+<body>
     <div id="example"></div>
     <div id="test"></div>
     <!-- 需要注意的是render里面的内容最后的结尾需要加一个 -->
@@ -29,13 +29,12 @@
                 <h1 style = {style1}>这是一个测试文件</h1>
                 {/*h1只是一级标题大小，并不是唯一*/}
                 <p data-myattribute = "somevalue">I like react</p>
-              </div>,
-              document.getElementById('example')
-          );
-          {/*组件的渲染*/}
-        var myDivElement = <div className="foo" />;
+            </div>,
+            document.getElementById('example')
+        );
+        {/*组件的渲染*/}
+        const myDivElement = <div className="foo" />;
         ReactDOM.render(myDivElement, document.getElementById('test'));
-
         </script>
 </body>
 
