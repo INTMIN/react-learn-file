@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>react的状态</title>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
+
+</head>
+
+<body>
+    <div id="example"></div>
+    <div id="test"></div>
+    <!-- 需要注意的是render里面的内容最后的结尾需要加一个 -->
+    <script type="text/babel">
+        function FormattedDate(props) {
+        return <h1>现在的时间是北京时间 ：{props.date.toLocaleTimeString()}</h1>;
+    }
+        class Clock extends React.Component {
+            constructor(props){
+                super(props);
+                this.state = {date: new Date()};
+            }
+            // 生命周期函数 componentDidMount()
+            componentDidMount() {
+                this.timeID = setInterval(
+                    // var f = ([参数]) => 表达式（单一）
+                    // 等价于以下写法
+                    // var f = function([参数]){
+                    // return 表达式;
+                    // }
+
+                    // 引入箭头函数有两个方面的作用：更简短的函数并且不绑定 this。
+                    () => this.tick(),
+                    1000
+                );
+            }
+            // 生命周期里的卸载函数 componentWillUnmount()
+            componentWillUnmount() {
+                clearInterval(this.timeID);
+            }
+            tick() {
+                this.setState({
+                    date: new Date()
+                });
+            }
+            render() {
+                return (
+                    <div>
+                    <FormattedDate date={this.state.date} />
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(
+            <Clock />,
+            // 这里要记得加 ','
+            document.getElementById('example')
+        );
+        
+    </script>
+</body>
+
+</html>
