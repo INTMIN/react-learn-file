@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>react的状态 props</title>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://cdn.bootcss.com/prop-types/15.6.1/prop-types.js"></script>
+</head>
+
+<body>
+    <div id="example"></div>
+    <div id="test"></div>
+    <!-- state 和 props 主要的区别在于 props 是不可变的，而 state 可以根据与用户交互来改变 -->
+    <script type="text/babel">
+    // 父组件 webSite
+        class WebSite extends React.Component{
+            constructor() {
+                super();
+                // 设置this.state的值
+                this.state = {
+                    name: "网站的名称",
+                    site: "www.baidu.com"
+                }
+            }
+            // 传递参数到Name和Link里面去
+            render() {
+                return (
+                    <div>
+                        <Name name={this.state.name} />
+                        <Link site={this.state.site} />
+                    </div>
+                );
+            }
+        }
+        // 子组件 Name
+        class Name extends React.Component {
+            render() {
+                return (
+                    <h1>{this.props.name}</h1>
+                );
+            }
+        }
+        // 子组件 Link
+        class Link extends React.Component {
+            render() {
+                return (
+                    <a href={this.props.site}>
+                    {this.props.site}
+                    </a>
+                );
+            }
+        }
+        // DOM渲染组件WebSite
+        ReactDOM.render(
+            <WebSite />,
+            document.getElementById('example')
+        );
+        // React.PropTypes 提供很多验证器 (validator) 来验证传入数据是否有效。当向 props 传入无效数据时，JavaScript 控制台会抛出警告
+        // 下面的例子是创建一个 Mytitle 组件，属性 title 是必须的且是字符串，非字符串类型会自动转换为字符串 
+        const title = "菜鸟教程";
+        // var title = 123;
+        class MyTitle extends React.Component {
+            render() {
+                return (
+                <h1>Hello, {this.props.title}</h1>
+                );
+            }
+        }
+ 
+        MyTitle.propTypes = {
+            title: PropTypes.string
+        };
+        ReactDOM.render(
+            <MyTitle title={title} />,
+            document.getElementById('test')
+        );
+
+    
+    
+    
+    </script>
+</body>
+
+</html>
