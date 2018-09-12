@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>react事件处理</title>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://cdn.bootcss.com/prop-types/15.6.1/prop-types.js"></script>
+</head>
+
+<body>
+    <div id="example"></div>
+    <div id="test"></div>
+    <script type="text/babel">
+        class Toggle extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {isToggleOn: true};
+
+                // 这边的绑定是必要的，这样'this'才能在回调函数中使用
+                // 通过 bind 的方式，事件对象以及更多的参数将会被隐式的进行传递
+                this.handleClick = this.handleClick.bind(this);
+            }
+            handleClick() {
+                this.setState(prevState => ({
+                    isToggleOn: !prevState.isToggleOn
+                }));
+            }
+            render(){
+                return (
+                    <button onClick={this.handleClick}>
+                        {this.state.isToggleOn ? 'ON' : 'OFF'}
+                    </button>
+                );
+            }
+        }
+        
+            // class LoggingButton extends React.Component {
+            //   handleClick() {
+            //     console.log('this is:', this);
+            //   }
+ 
+            //   render() {
+            //       这个语法确保了 `this` 绑定在  handleClick 中
+            //     return (
+            //       <button onClick={(e) => this.handleClick(e)}>
+            //         Click me
+            //       </button>
+            //     );
+            //   }
+            // }
+        ReactDOM.render(
+            <Toggle />,
+            document.getElementById('example')
+        );
+    </script>
+</body>
+
+</html>
