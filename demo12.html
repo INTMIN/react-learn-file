@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>react 列表和Keys</title>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
+
+    <style>
+    button {
+        height: 40px;
+        width: 200px;
+      }
+      .warning {
+        background-color: red;
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+      
+        font-size: 14pt;
+        color: white;
+      }
+      </style>
+</head>
+
+<body>
+    <div id="example"></div>
+    <div id="test"></div>
+    <script type="text/babel">
+        // 数字列表组件
+        // 组件接收数组参数，每个列表元素分配一个 key，不然会出现警告 a key should be provided for list items，意思就是需要包含 key
+        function Listitem(props) {
+            return <li>{props.value}</li>;
+        }
+        function NumberList(props) {
+            const numbers = props.numbers;
+            const listItems = numbers.map((number) =>
+                <Listitem key={number.toString()}
+                    value = {number} />   
+            );
+            return (
+                <ul>{listItems}</ul>
+            );
+        }
+        const numbers = [1,2,3,4,5,6];
+        ReactDOM.render(
+            <NumberList numbers={numbers} />,
+            document.getElementById('example')
+        );
+
+
+        // 多排标题组件
+        function Blog(props) {
+            const sidebar = (
+                <ul>
+                    {props.posts.map((post) =>
+                    <li key={post.id}>
+                    {post.title}
+                    </li>
+                    )}
+                </ul>
+            );
+            // key 会作为给 React 的提示，但不会传递给你的组件。如果您的组件中需要使用和 key 相同的值，请将其作为属性传递
+            // const content = posts.map((post) =>
+            // <Post
+            //     key={post.id}
+            //     id={post.id}
+            //     title={post.title} />
+            //     );
+            const content = props.posts.map((post) =>
+            <div key={post.id}>
+                <h3>{post.title}</h3>
+                <p>{post.content}</p>
+            </div> 
+            );
+            return (<div>
+                    {sidebar}
+                    <hr />
+                    {content}
+                </div>
+            );  
+        }
+        const posts = [
+            {id: 1, title: 'hello', content: 'welcome to learning react' },
+            {id: 2, title: 'installation', content: 'you can install react from react' },
+        ];
+        ReactDOM.render(
+            <Blog posts={posts} />,
+            // 又一次忘记在这 加逗号
+            document.getElementById('test')
+        );
+    </script>
+
+</body>
+
+</html>
