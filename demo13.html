@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>react 组件API</title>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="example"></div>
+    <div id="test"></div>
+    <script type="text/babel">
+    // 设置状态：setState  setState(object nextState[, function callback])
+    // 替换状态：replaceState  replaceState(object nextState[, function callback])
+    // 设置属性：setProps  setProps(object nextProps[, function callback])
+    // props相当于组件的数据流，它总是会从父组件向下传递至所有的子组件中。当和一个外部的JavaScript应用集成时，我们可能会需要向组件传递数据或通知React.render()组件需要重新渲染，可以使用setProps()。
+    // setProps 该状态会和当前的props合并
+    // setProps 更新组件，我可以在节点上再次调用React.render()，也可以通过setProps()方法改变组件属性，触发组件重新渲染。
+    
+    // 替换属性：replaceProps  replaceProps(object nextProps[, function callback])
+    //  replaceProps 会替换当前的props
+    // 强制更新：forceUpdate  forceUpdate([function callback])
+    // 获取DOM节点：findDOMNode  DOMElement findDOMNode()
+    // 判断组件挂载状态：isMounted  bool isMounted()
+        
+        // setState组件 实现点击h2 数字增长次数
+        class Counter extends React.Component{
+            constructor(props) {
+                super(props);
+                this.state = {clickCount: 0};
+                this.handleClick = this.handleClick.bind(this);
+            }
+            handleClick() {
+                this.setState(function(state) {
+                    return {clickCount: state.clickCount + 1};
+                });
+            }
+            render () {
+                return (<h2 onClick={this.handleClick}> 点击这里 点击次数为：{this.state.clickCount}</h2>);
+            }
+        }
+        ReactDOM.render(
+            <Counter />,
+            document.getElementById('example')
+        );
+    </script>
+
+</body>
+
+</html>
