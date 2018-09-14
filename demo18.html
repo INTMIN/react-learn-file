@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>react 特殊属性Ref</title>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
+   <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="example"></div>
+    <div id="test"></div>
+    <script type="text/babel">
+        // refs属性例子
+        class MyComponent extends React.Component{
+            handleClick(){
+                // 原生的DOM API获取焦点
+                this.refs.myInput.focus();
+            }
+            render() {
+                return (
+                    <div>
+                        <input type="text" ref="myInput" />
+                        <input
+                        type="button"
+                        value="点击我就可以获取焦点"
+                        onClick={this.handleClick.bind(this)}
+                        />
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(
+            <MyComponent />,
+            document.getElementById('example')
+        );
+    </script>
+
+</body>
+
+</html>
