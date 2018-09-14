@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>react 表单与事件（上）</title>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="example"></div>
+    <div id="test"></div>
+    <script type="text/babel">
+    // 一个输入框组件
+    class Content extends React.Component {
+        render() {
+            return (
+                <div>
+                    <input type="text" value={this.props.myDateProp} onChange={this.props.updateStateProp} />
+                    <h4>{this.props.myDateProp}</h4>
+                </div> 
+            )
+        }
+    }
+    class HelloMessage extends React.Component {
+        constructor(props){
+            super(props);
+            this.state = {value: 'Hello'};
+            this.handleChange = this.handleChange.bind(this);
+        }
+        handleChange(event){
+            this.setState({value: event.target.value});
+        }
+        render()  {
+            const value = this.state.value;
+            return <div>
+                <Content myDateProp={value} 
+                updateStateProp={this.handleChange}></Content>
+                </div>;
+        }
+    }
+    ReactDOM.render(
+        <HelloMessage />,
+        document.getElementById('example')
+    );
+
+    // 下拉菜单提交数据
+    class Flavorform extends React.Component{
+        constructor(props){
+            super(props);
+            this.state = {value: 'cocount'};
+
+            this.handleChange = this.handleChange.bind(this);
+            this.handleSubmit = this.handleSubmit.bind(this);
+        }
+        handleChange(event){
+            this.setState({value: event.target.value});
+        }
+        handleSubmit(event){
+            alert('你最喜欢的是:' + this.state.value);
+            event.preventDefault();
+        }
+        render(){
+            return(
+                <form onSubmit={this.handleSubmit}>
+                <label>
+                选择您最喜欢的网站
+                <select value={this.state.value} onChange={this.handleChange}>
+                    <option value="gg">Google</option>
+                    <option value="bd">Baidu</option>
+                    <option value="tb">Taobao</option>
+                    <option value="fb">Facebook</option>
+                </select>
+                </label>
+                <input type="submit" value="提交" />
+                </form>
+            );
+        }
+    }
+    ReactDOM.render(
+        <Flavorform />,
+        document.getElementById('test')
+    );
+    </script>
+
+</body>
+
+</html>

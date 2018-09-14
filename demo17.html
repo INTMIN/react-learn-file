@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>react 表单与事件（下）</title>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="example"></div>
+    <div id="test"></div>
+    <script type="text/babel">
+        class Reservation extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    isGoing: true,
+                    numberOfGuests: 2
+                };
+                this.handleInputChange = this.handleInputChange.bind(this);
+            }
+            handleInputChange(event) {
+                const target = event.target;
+                const value = target.typr === 'checkbox' ? target.checked : target.value;
+                const name = target.name;
+                
+                this.setState({
+                    [name]: value
+                });
+            }
+            render(){
+                return(
+                    <form>
+                        <label>
+                            是否离开：
+                            <input
+                            name="isGoing"
+                            type="checkbox"
+                            checked={this.state.isGoing}
+                            onChange={this.handleInputChange} />
+                        </label>
+                        <br />
+                        <label>
+                            访客数：
+                            <input
+                            name="numberOfGuests"
+                            type="number"
+                            value={this.state.numberOfGuests}
+                            onChange={this.handleInputChange} />
+                        </label>
+                    </form>            
+                );
+            }
+        }
+    ReactDOM.render(
+        <Reservation />,
+        document.getElementById('example')
+    );
+
+    class Content extends React.Component {
+        render() {
+            return (
+                <div>
+                    <button onClick = {this.props.updeteStateProp}>点击这里</button>
+                    <h4>{this.props.myDataProp}</h4>
+                </div>
+            )
+        }
+    }
+    class HelloMessage extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {value: 'Hello'};
+            this.handleChange = this.handleChange.bind(this);
+        }
+        handleChange(event){
+            this.setState({value: '你好啊'})
+        }
+        render() {
+            const value = this.state.value;
+            return (
+                <div>
+                    <Content myDataProp = {value}
+                    updeteStateProp = {this.handleChange}></Content>
+                </div>
+            );
+        }
+    }
+    ReactDOM.render(
+        <HelloMessage />,
+        document.getElementById('test')
+    ); 
+    </script>
+
+</body>
+
+</html>
