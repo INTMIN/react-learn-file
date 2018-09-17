@@ -1,5 +1,6 @@
  import React, { Component, Fragment } from 'react';
- import './style.css'
+ import './style.css';
+ import TodoItem from "./TodoLitem";
 //  可以直接引入
 
  class TodoList extends Component {
@@ -8,7 +9,7 @@
         super(props);
         this.state = {
             inputValue: '',
-            list: ['学习代码','学习react']
+            list: []
         }
     }
     
@@ -19,10 +20,10 @@
                 <label htmlFor="insterArea">输入内容</label>
                 {/* 光标聚焦 */}
                 <input 
-                id="insterArea"
-                className='input'
-                value = {this.state.inputValue}
-                onChange = {this.handleInputChange.bind(this)}
+                  id="insterArea"
+                  className='input'
+                  value = {this.state.inputValue}
+                  onChange = {this.handleInputChange.bind(this)}
                 />
                 {/* 事件绑定 onChange*/}
                 <button onClick ={this.handleBtnClick.bind(this)}>提交</button>
@@ -33,13 +34,21 @@
                     {
                         this.state.list.map((item, index) => {
                             return (
-                                <li 
+                                <div>
+                                <TodoItem 
+                                    content={item} 
+                                    index={index}
+                                    deleteItem={this.handLeItemDelete.bind(this)}
+                                />
+                                {/* 父组件通过属性向子组件传递内容 */}
+                                {/* <li 
                                 key={index} 
                                 onClick={this.handLeItemDelet.bind(this, index)}
                                 dangerouslySetInnerHTML={{__html:item}}
                                 // 不转译 dangerouslySetInnerHTML={{__html:item}}
                                 >
-                                </li>
+                                </li> */}
+                                </div>
                             )
                         })
                     }
@@ -60,7 +69,7 @@
             // 展开运算符...
         })
     }
-    handLeItemDelet(index) {
+    handLeItemDelete(index) {
         // immutable
         // react里面state 不允许我们做任何改变，只能拷贝出来修改
         const list = [...this.state.list];
