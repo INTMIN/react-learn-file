@@ -1,4 +1,6 @@
  import React, { Component, Fragment } from 'react';
+ import './style.css'
+//  可以直接引入
 
  class TodoList extends Component {
 
@@ -13,20 +15,30 @@
     render() {
         return (
             <Fragment>
-            <div>
-                <input value = {this.state.inputValue}
+              <div>
+                <label htmlFor="insterArea">输入内容</label>
+                {/* 光标聚焦 */}
+                <input 
+                id="insterArea"
+                className='input'
+                value = {this.state.inputValue}
                 onChange = {this.handleInputChange.bind(this)}
                 />
                 {/* 事件绑定 onChange*/}
                 <button onClick ={this.handleBtnClick.bind(this)}>提交</button>
+                {
+                    // onClick事件绑定 
+                }
                 <ul>
                     {
                         this.state.list.map((item, index) => {
                             return (
                                 <li 
-                                key={index} onClick={this.handLeItemDelet.bind(this, index)}
+                                key={index} 
+                                onClick={this.handLeItemDelet.bind(this, index)}
+                                dangerouslySetInnerHTML={{__html:item}}
+                                // 不转译 dangerouslySetInnerHTML={{__html:item}}
                                 >
-                                {item}
                                 </li>
                             )
                         })
