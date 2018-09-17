@@ -35,8 +35,10 @@
                         this.state.list.map((item, index) => {
                             return (
                                 <div>
+                                {
+                                    //  父组件通过属性向子组件传递内容 
+                                }
                                 <TodoItem 
-                                {/* 父组件通过属性向子组件传递内容 */}
                                     content={item} 
                                     index={index}
                                     deleteItem={this.handLeItemDelete.bind(this)}
