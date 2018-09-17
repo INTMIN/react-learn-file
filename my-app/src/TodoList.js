@@ -11,6 +11,9 @@
             inputValue: '',
             list: []
         }
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleBtnClick = this.handleBtnClick.bind(this);
+        this.handLeItemDelete = this.handLeItemDelete.bind(this);
     }
     
     render() {
@@ -23,65 +26,54 @@
                   id="insterArea"
                   className='input'
                   value = {this.state.inputValue}
-                  onChange = {this.handleInputChange.bind(this)}
+                  onChange = {this.handleInputChange}
                 />
                 {/* 事件绑定 onChange*/}
-                <button onClick ={this.handleBtnClick.bind(this)}>提交</button>
+                <button onClick ={this.handleBtnClick}>提交</button>
                 {
                     // onClick事件绑定 
                 }
                 <ul>
-                    {
-                        this.state.list.map((item, index) => {
-                            return (
-                                <div>
-                                {
-                                    //  父组件通过属性向子组件传递内容 
-                                }
-                                <TodoItem 
-                                    content={item} 
-                                    index={index}
-                                    deleteItem={this.handLeItemDelete.bind(this)}
-                                />
-                                {/* <li 
-                                key={index} 
-                                onClick={this.handLeItemDelet.bind(this, index)}
-                                dangerouslySetInnerHTML={{__html:item}}
-                                // 不转译 dangerouslySetInnerHTML={{__html:item}}
-                                >
-                                </li> */}
-                                </div>
-                            )
-                        })
-                    }
+                    {this.getTodoItem()}
                 </ul>
             </div>
             </Fragment>
         )
     }
-    handleInputChange(e) {
-        // console.log(e.target.value);
-        this.setState({
-            inputValue: e.target.value
+    // 代码拆分
+    getTodoItem() {
+        return this.state.list.map((item, index) => {
+            return (
+                <TodoItem 
+                    key={index}
+                    content={item} 
+                    index={index}
+                    deleteItem={this.handLeItemDelete}
+                />
+            )
         })
     }
+    handleInputChange(e) {
+        const value = e.target.value;
+        // console.log(e.target.value);
+        this.setState(() => ({
+            inputValue: value
+        }))
+    }
     handleBtnClick() {
-        this.setState({
-            list: [...this.state.list, this.state.inputValue]
-            // 展开运算符...
-        })
+        this.setState((prevState) => ({
+            list: [...prevState.list, prevState.inputValue],//     展开运算符...
+            inputValue: ''
+        }))     
     }
     handLeItemDelete(index) {
         // immutable
-        // react里面state 不允许我们做任何改变，只能拷贝出来修改
-        const list = [...this.state.list];
-        // 把数组拷贝到list里面
-        list.splice(index, 1);
-        
-        this.setState({
-            list: list
-        })
-        console.log(index);
+        // react里面state 不允许我们做任何改变，只能拷贝出来修改       
+        this.setState((prevState) => {
+            const list = [...prevState.list]; 
+            list.splice(index, 1);// 把数组拷贝到list里面
+            return {list}
+        });
     }
 }
 export default TodoList;

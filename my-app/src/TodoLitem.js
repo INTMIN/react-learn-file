@@ -2,18 +2,20 @@ import React, { Component } from 'react';
 
 class TodoItem extends Component{
 
-    constructor(props){
+    constructor(props){       
         super(props)
         this.handleClick = this.handleClick.bind(this)
     }
-    render(){
+    render() {
+        const {content} = this.props;
         return (
         <div onClick={this.handleClick}>
-            {this.props.content}
+            {content}
         </div>
         )}
-    handleClick(){
-        this.props.deleteItem(this.props.index)
+    handleClick() {
+        const {deleteItem, index} = this.props
+        deleteItem(index);
     }
 }
 export default TodoItem;
