@@ -20,9 +20,9 @@ class App extends Component {
             <CSSTransitionGroup
                 in = {this.state.show}
                 timeout={1000}
-                classNames='fade'
-                unmountOnExit
-                onEnter={(el) => {el.style.color='blue'}}
+                className='fade'
+                // unmountOnExit
+                // onEnter={(el) => {el.style.color='blue'}}
             >
                 <div>Hello React</div>
             </CSSTransitionGroup>
