@@ -9,7 +9,7 @@ class TodoItem extends Component{
     }
     render() {
         const {content, test} = this.props;
-        // 顺序是JSX ->先生成JS对象也就是虚拟DOM -> 再生成真实DOM
+        // 顺序是JSX -> 通过底层creatElement方法-> 生成JS对象也就是虚拟DOM -> 再生成真实DOM
         return (
         <div onClick={this.handleClick}>
             {test} - {content}
