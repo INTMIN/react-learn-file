@@ -1,6 +1,6 @@
  import React, { Component, Fragment } from 'react';
  import TodoItem from './TodoLitem';
- import axios from 'axios';
+//  import axios from 'axios';
  import './style.css';
 //  可以直接引入
 
@@ -49,17 +49,17 @@
     }
     // 组件被挂载到页面之后，自动被执行，只执行一次
     // 一般Ajax请求就放到componentDidMount里面
-    componentDidMount() {
-        axios.get('/api/todolist')
-        .then((res) => {
-            console.log(res.data);
-            this.setState(() => ({
-                list: [...res.data]
-            }));
-        })
-        .catch(() => {alert('err')})
+    // componentDidMount() {
+    //     axios.get('/api/todolist')
+    //     .then((res) => {
+    //         console.log(res.data);
+    //         this.setState(() => ({
+    //             list: [...res.data]
+    //         }));
+    //     })
+    //     .catch(() => {alert('err')})
         // console.log('componentDidMount');
-    }
+    // }
 
     // 组件被更新之前，它会自动被执行
     // shouldComponentUpdate() {
