@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { CSSTransitionGroup } from 'react-transition-group';
 import './style.css'
 // 上面的那个等价于
 // import React from 'react'
@@ -16,8 +17,16 @@ class App extends Component {
   render() {
     return (
         <Fragment>
-      <div className={this.state.show ? 'show' :'hide'}>Hello React</div>
-      <button onClick={this.handleToggole}>toggle</button>
+            <CSSTransitionGroup
+                in = {this.state.show}
+                timeout={1000}
+                classNames="fade"
+                // unmountOnExit
+                // onEnter={(el) => {el.style.color='blue'}}
+            >
+                <div>Hello React</div>
+            </CSSTransitionGroup>
+            <button onClick={this.handleToggole}>toggle</button>
       </Fragment>
     )
   }
