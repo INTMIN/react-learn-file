@@ -18,9 +18,9 @@
         this.handLeItemDelete = this.handLeItemDelete.bind(this);
     }
     // 在组件即将被挂载到页面的时候自动执行，只执行一次
-    componentWillMount(){
-        console.log('componentWillMount');
-    }
+    // componentWillMount(){
+    //     console.log('componentWillMount');
+    // }
     
     render() {
         console.log('parent render');
@@ -51,32 +51,37 @@
     // 一般Ajax请求就放到componentDidMount里面
     componentDidMount() {
         axios.get('/api/todolist')
-        .then(()=>{alert('succ')})
-        .catch(()=>{alert('err')})
-        console.log('componentDidMount');
+        .then((res) => {
+            console.log(res.data);
+            this.setState(() => ({
+                list: [...res.data]
+            }));
+        })
+        .catch(() => {alert('err')})
+        // console.log('componentDidMount');
     }
 
     // 组件被更新之前，它会自动被执行
-    shouldComponentUpdate() {
-        console.log('shouldComponentUpdate');
-        return true;
-    }
+    // shouldComponentUpdate() {
+    //     console.log('shouldComponentUpdate');
+    //     return true;
+    // }
 
     // 组件被更新之前，它会自动被执行,但是他在shouldComponentUpdate只会执行
     // 只有shouldComponentUpdata返回true才执行
-    componentWillUpdate() {
-        console.log('componentWillUpdate');
-    }
+    // componentWillUpdate() {
+    //     console.log('componentWillUpdate');
+    // }
 
     // 组件更新完成后，才会被执行
-    componentDidUpdate() {
-        console.log('componentDidUpdate');
-    }
+    // componentDidUpdate() {
+    //     console.log('componentDidUpdate');
+    // }
 
 
-    componentWillReceiveProps() {
-        console.log('componentWillReceiveProps');
-    }
+    // componentWillReceiveProps() {
+    //     console.log('componentWillReceiveProps');
+    // }
 
     // 代码拆分
     getTodoItem() {
