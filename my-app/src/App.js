@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { CSSTransitionGroup } from 'react-transition-group';
-import './style.css'
+import './style1.css'
 // 上面的那个等价于
 // import React from 'react'
 // const Component = React.Component
@@ -20,9 +20,9 @@ class App extends Component {
             <CSSTransitionGroup
                 in = {this.state.show}
                 timeout={1000}
-                classNames="fade"
-                // unmountOnExit
-                // onEnter={(el) => {el.style.color='blue'}}
+                classNames='fade'
+                unmountOnExit
+                onEnter={(el) => {el.style.color='blue'}}
             >
                 <div>Hello React</div>
             </CSSTransitionGroup>
