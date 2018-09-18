@@ -7,6 +7,7 @@ class TodoItem extends Component{
         super(props)
         this.handleClick = this.handleClick.bind(this)
     }
+    
     shouldComponentUpdate(nextProps, nextState) {
         if(nextProps.content !== this.props.content){
             return true;
@@ -14,6 +15,7 @@ class TodoItem extends Component{
             return false;
         }
     }
+
     render() {
         console.log('child render');
         const {content, test} = this.props;
