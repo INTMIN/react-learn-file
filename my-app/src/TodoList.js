@@ -1,7 +1,6 @@
  import React, { Component, Fragment } from 'react';
  import './style.css';
  import TodoItem from "./TodoLitem";
- import Test from "./Test";
 //  可以直接引入
 
  class TodoList extends Component {
@@ -17,9 +16,13 @@
         this.handleBtnClick = this.handleBtnClick.bind(this);
         this.handLeItemDelete = this.handLeItemDelete.bind(this);
     }
+    // 在组件即将被挂载到页面的时候自动执行
+    componentWillMount(){
+        console.log('componentWillMount');
+    }
     
     render() {
-        console.log('render');
+        console.log('parent render');
         return (
             <Fragment>
               <div>
@@ -40,10 +43,36 @@
                 <ul>
                     {this.getTodoItem()}
                 </ul>
-                <Test content={this.state.inputValue}/>
             </Fragment>
         )
     }
+    // 组件被挂载到页面之后，自动被执行
+    componentDidMount() {
+        console.log('componentDidMount');
+    }
+
+    // 组件被更新之前，它会自动被执行
+    shouldComponentUpdate() {
+        console.log('shouldComponentUpdate');
+        return true;
+    }
+
+    // 组件被更新之前，它会自动被执行,但是他在shouldComponentUpdate只会执行
+    // 只有shouldComponentUpdata返回true才执行
+    componentWillUpdate() {
+        console.log('componentWillUpdate');
+    }
+
+    // 组件更新完成后，才会被执行
+    componentDidUpdate() {
+        console.log('componentDidUpdate');
+    }
+
+
+    componentWillReceiveProps() {
+        console.log('componentWillReceiveProps');
+    }
+
     // 代码拆分
     getTodoItem() {
         return this.state.list.map((item, index) => {
