@@ -1,6 +1,7 @@
  import React, { Component, Fragment } from 'react';
+ import TodoItem from './TodoLitem';
+ import axios from 'axios';
  import './style.css';
- import TodoItem from "./TodoLitem";
 //  可以直接引入
 
  class TodoList extends Component {
@@ -16,7 +17,7 @@
         this.handleBtnClick = this.handleBtnClick.bind(this);
         this.handLeItemDelete = this.handLeItemDelete.bind(this);
     }
-    // 在组件即将被挂载到页面的时候自动执行
+    // 在组件即将被挂载到页面的时候自动执行，只执行一次
     componentWillMount(){
         console.log('componentWillMount');
     }
@@ -46,8 +47,12 @@
             </Fragment>
         )
     }
-    // 组件被挂载到页面之后，自动被执行
+    // 组件被挂载到页面之后，自动被执行，只执行一次
+    // 一般Ajax请求就放到componentDidMount里面
     componentDidMount() {
+        axios.get('/api/todolist')
+        .then(()=>{alert('succ')})
+        .catch(()=>{alert('err')})
         console.log('componentDidMount');
     }
 
