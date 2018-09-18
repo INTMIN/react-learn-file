@@ -1,12 +1,14 @@
  import React, { Component, Fragment } from 'react';
  import './style.css';
  import TodoItem from "./TodoLitem";
+ import Test from "./Test";
 //  可以直接引入
 
  class TodoList extends Component {
 
     constructor(props) {
         super(props);
+        // 当组件的state或者props发生改变的时候，render函数就会重新执行
         this.state = {
             inputValue: '',
             list: []
@@ -17,6 +19,7 @@
     }
     
     render() {
+        console.log('render');
         return (
             <Fragment>
               <div>
@@ -33,10 +36,11 @@
                 {
                     // onClick事件绑定 
                 }
+            </div>
                 <ul>
                     {this.getTodoItem()}
                 </ul>
-            </div>
+                <Test content={this.state.inputValue}/>
             </Fragment>
         )
     }
