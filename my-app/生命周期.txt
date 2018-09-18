@@ -1,0 +1,2 @@
+生命周期函数指的是在某一个时刻组件会自动调用执行的函数
+  componentWillMount  componentDidMount 只会在挂载的时候执行，只会执行一次
