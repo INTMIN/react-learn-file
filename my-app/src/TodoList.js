@@ -49,7 +49,7 @@
         return this.state.list.map((item, index) => {
             return (
                 <TodoItem 
-                    key={index}
+                    key={item}
                     content={item} 
                     index={index}
                     deleteItem={this.handLeItemDelete}
