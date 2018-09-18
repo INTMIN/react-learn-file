@@ -2,11 +2,24 @@
     border: 1px red solid;
 }
 .show{
-    opacity: 1;
-    transition: all 1s ease-in;
+    animation: show-item 2s ease-in forwards;
 }
 
 .hide{
-    opacity: 0;
-    transition: all 1s ease-in;
+    animation: hide-item 2s ease-in forwards;
+}
+
+@keyframes show-item {
+    0% {
+        opacity: 1;
+        color: red;
+    }
+    50% {
+        opacity: 0.5;
+        color: green;
+    }
+    100% {
+        opacity: 0;
+        color: blue;
+    }
 }
