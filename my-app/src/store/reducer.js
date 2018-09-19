@@ -10,6 +10,13 @@ export default (state = defaultState, action) => {
         newState.inputValue = action.value;
         return newState;
     }
-    console.log(state, action);
+    if (action.type === 'add_todo_item') {
+        const newState = JSON.parse(JSON.stringify(state));
+        newState.list.push(newState.inputValue);
+        newState.inputValue = '';
+        // console.log(newState);
+        return newState;
+    }
+    // console.log(state, action);
     return state;
 }
