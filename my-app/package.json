@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/react-transition-group": "^2.0.14",
+    "antd": "^3.9.2",
     "axios": "^0.18.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
