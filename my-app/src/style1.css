@@ -1,8 +1,8 @@
-.fade-enter {
+.fade-enter, .fate-active {
     opacity: 0;
 }
 
-.fade-enter-active {
+.fade-enter-active, .fate-apple-active {
     opacity: 1;
     transition: opacity 1s ease-in;
 }
