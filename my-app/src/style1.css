@@ -1,25 +1,17 @@
-.fade-enter, .fate-active {
-    opacity: 0;
-}
-
-.fade-enter-active, .fate-apple-active {
+.example-enter {
+    opacity: 0.01;
+  }
+  
+  .example-enter.example-enter-active {
     opacity: 1;
-    transition: opacity 1s ease-in;
-}
-
-.fade-enter-done {
+    transition: opacity 500ms ease-in;
+  }
+  
+  .example-exit {
     opacity: 1;
-}
-
-.fade-exit {
-    opacity: 1;
-}
-
-.fade-exit-active {
-    opacity: 0;
-    transition: opacity 1s ease-in;
-}
-
-.fade-exit-done {
-    opacity: 0;
-}
+  }
+  
+  ..example-exit.example-exit-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+  }
