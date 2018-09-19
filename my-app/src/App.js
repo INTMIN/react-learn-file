@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { CSSTransition } from 'react-transition-group';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import './style1.css';
 // 上面的那个等价于
 // import React from 'react'
@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     return (
         <Fragment>
-          {/* <CSSTransitionGroup> */}
+          <TransitionGroup>
             {
                 this.state.list.map((item, index) => {
                     return (
@@ -35,7 +35,7 @@ class App extends Component {
                 })
             }
             <button onClick={this.handleAddItem}>toggle</button>
-            {/* </CSSTransitionGroup> */}
+            </TransitionGroup>
       </Fragment>
     )
   }
