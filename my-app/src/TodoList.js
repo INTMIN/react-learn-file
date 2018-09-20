@@ -27,12 +27,12 @@ import axios from 'axios';
         />
         )
     }
-    componentDidMount(){
+    componentDidMount() {
         axios.get('/list.json').then((res) => {
             const data = res.data;
             const action = initListAction(data);
             store.dispatch(action);
-            console.log(res);
+            // console.log(res);
         })
     }
     handleInputChange(e) {
