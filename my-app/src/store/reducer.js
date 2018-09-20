@@ -1,6 +1,6 @@
 const defaultState = {
-    inputValue: '123',
-    list: [1, 2]
+    inputValue: '',
+    list: []
 }
 
 // reducer 可以接收state，但是绝不能修改state所以需要拷贝一份
@@ -15,6 +15,11 @@ export default (state = defaultState, action) => {
         newState.list.push(newState.inputValue);
         newState.inputValue = '';
         // console.log(newState);
+        return newState;
+    }
+    if (action.type === 'delete_todo_item') {
+        const newState = JSON.parse(JSON.stringify(state));
+        newState.list.splice(action.index, 1);
         return newState;
     }
     // console.log(state, action);

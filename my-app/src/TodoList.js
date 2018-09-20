@@ -28,7 +28,7 @@ import store from './store';
                 style={{marginTop: '10px', width: '300px'}}
                 bordered
                 dataSource={this.state.list}
-                renderItem={item => (<List.Item>{item}</List.Item>)}
+                renderItem={(item, index) => (<List.Item onClick={this.handItemDelete.bind(this, index)}>{item}</List.Item>)}
             />
         </div>
         )
@@ -40,13 +40,20 @@ import store from './store';
         }
         store.dispatch(action);
     }
-    handleStoreChange(){
+    handleStoreChange() {
         this.setState(store.getState());
     }
-    handleBtnClick(){
+    handleBtnClick() {
         const action = {
             type: 'add_todo_item'
         };
+        store.dispatch(action);
+    }
+    handItemDelete(index) {
+        const action = {
+            type: 'delete_todo_item',
+            index
+        }
         store.dispatch(action);
     }
 }
