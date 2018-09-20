@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { Input, Button, List } from 'antd';
 import 'antd/dist/antd.css';
 import store from './store';
-import { CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM} from './store/actionTypes';
-  
+import { getInputChangeAction, getAddItemAction, getDeleteItemAction } from './store/actionCreators';
+
+
     class TodoList extends Component {
-        constructor(props){
+        constructor(props) {
             super(props);
             this.state = store.getState();
             this.handleInputChange = this.handleInputChange.bind(this);
@@ -35,26 +36,18 @@ import { CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM} from './store/acti
         )
     }
     handleInputChange(e) {
-      const action = {
-        type: CHANGE_INPUT_VALUE,
-        value: e.target.value
-        }
+        const action = getInputChangeAction(e.target.value);
         store.dispatch(action);
     }
     handleStoreChange() {
         this.setState(store.getState());
     }
     handleBtnClick() {
-        const action = {
-            type: ADD_TODO_ITEM
-        };
+        const action = getAddItemAction();
         store.dispatch(action);
     }
     handItemDelete(index) {
-        const action = {
-            type: DELETE_TODO_ITEM,
-            index
-        }
+        const action = getDeleteItemAction(index);
         store.dispatch(action);
     }
 }
