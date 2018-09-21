@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/react-redux": "^6.0.9",
     "@types/react-transition-group": "^2.0.14",
     "antd": "^3.9.2",
     "axios": "^0.18.0",
