@@ -11,7 +11,7 @@ function* getInitList() {
         const action = initListAction(res.data);
         yield put(action);
     }catch(e){
-        console.log('list.json 网络请求失败')；
+        console.log('list.json 网络请求失败');
     }
 }
 
