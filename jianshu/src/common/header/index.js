@@ -2,6 +2,7 @@ import React from 'react';
 import  CSSTransition from 'react-transition-group/CSSTransition';
 // 官方文档写错了这里不需要加{}所以导致的错误
 import {connect} from 'react-redux';
+import  { actionCreators } from './store';
 import { 
     HeaderWrapper,
     Logo,
@@ -55,22 +56,16 @@ const Header = (props) => {
 
 const mapStateToProps = (state) =>{
     return{
-        focused: state.focused
+        focused: state.header.focused
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return{
         handleInputFocus() {
-            const action = {
-                type: 'search_focus'
-            };
-            dispatch(action);
+            dispatch(actionCreators.searchFocus());
         },
         handleInputBlur() {
-            const action = {
-                type: 'search_blur'
-            };
-            dispatch(action);
+            dispatch(actionCreators.searchBlur());
         }
     }
 }
