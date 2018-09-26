@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/styled-components": "^3.0.1",
+    "axios": "^0.18.0",
     "immutable": "^3.8.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -12,6 +13,7 @@
     "react-transition-group": "^2.4.0",
     "redux": "^4.0.0",
     "redux-immutable": "^4.0.0",
+    "redux-thunk": "^2.3.0",
     "styled-components": "^3.4.9"
   },
   "scripts": {
