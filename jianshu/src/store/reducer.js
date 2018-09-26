@@ -1,6 +1,6 @@
-import { combineReducers} from 'redux';
+import { combineReducers } from 'redux-immutable';
 import { reducer as headerReducer} from '../common/header/store';
-// es6的语法
+
 
 
 const reducer = combineReducers({
