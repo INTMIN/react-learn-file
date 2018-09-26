@@ -54,13 +54,13 @@ const Header = (props) => {
     )
 }
 
-const mapStateToProps = (state) =>{
-    return{
-        focused: state.header.focused
+const mapStateToProps = (state) => {
+    return {
+        focused: state.header.get('focused')
     }
 }
 const mapDispatchToProps = (dispatch) => {
-    return{
+    return {
         handleInputFocus() {
             dispatch(actionCreators.searchFocus());
         },
