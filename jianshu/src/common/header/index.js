@@ -46,7 +46,7 @@ class Header extends Component {
                         <SearchInfoSwitch 
                             onClick={() => handleChangePage(page, totalPage, this.spinIcon)}
                         >
-                            <i ref={(icon) => {this.spinIcon = icon}} className="iconfont spin">&#xe851;</i>
+                            <i ref={(icon) => {this.spinIcon = icon}} className="iconfont spin" style={{"transform": "rotate(0deg)"}}>&#xe851;</i>
                             换一批
                         </SearchInfoSwitch>
                     </SearchInfoTitle>
@@ -127,16 +127,16 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(actionCreators.mouseLeave());
         },
         handleChangePage(page, totalpage, spin) {
-            // spin.style.transfrom = 'rotate(360deg)';
-            // let originAngle = spin.style.transform.replace(/[^0-9]/ig, '');
-            // if (originAngle) {
-            //     originAngle = parseInt(originAngle, 10); 
-            // }else {
-            //     originAngle = 0;
-            // }
-            // console.log(originAngle);
+            // spin.style.transform = 'rotate(360deg)';
+            let originAngle = spin.style.transform.replace(/[^0-9]/ig, '');
+            if (originAngle) {
+                originAngle = parseInt(originAngle, 10); 
+            }else {
+                originAngle = 0;
+            }
+            console.log(originAngle);
         
-            // spin.style.transform = 'rotate(' + (originAngle + 360) + 'deg)';
+            spin.style.transform = 'rotate(' + (originAngle + 360) + 'deg)';
             // console.log(spin.style.transform);
             // console.log(spin);
 

@@ -118,12 +118,15 @@ export const SearchInfoSwitch = styled.span`
     float: right;
     font-size: 13px;
     .spin {
-        display: block;
+        display: inline-block;
         float: left;
-        font-size: 10px;
+        font-size:10px;
         margin-right: 2px;
-        transition: all .2 ease-in;
-        ${'' /* transform: rotate(50deg); */}
+        transition:.5s ease;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
         transform-origin: center center;
     }
 `;
@@ -143,7 +146,6 @@ export const SearchInfoItem = styled.a`
 
 export const SearchInfolist = styled.div`
     overflow: hidden;
-
 `;
 
 export const Addition = styled.div`
