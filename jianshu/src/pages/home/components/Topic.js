@@ -4,7 +4,7 @@ import {TopicWrapper,TopicItem} from '../style';
 
 class Topic extends Component {
     render(){
-        const {list} = this,props;
+        const {list} = this.props;
         return (
             <TopicWrapper>
                 {
