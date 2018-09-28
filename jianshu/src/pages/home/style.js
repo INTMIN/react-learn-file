@@ -103,4 +103,16 @@ export const LoadMore = styled.div`
     border-radius:20px;
     color:#fff;
     cursor:pointer;
-`
+`;
+
+export const BackTop = styled.div`
+    position:fixed;
+    right:100px;
+    bottom:30px;
+    width:60px;
+    height:60px;
+    line-height: 60px;
+    text-align: center;
+    font-size:14px;
+    border: 1px solid #ccc;
+`;
