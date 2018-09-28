@@ -25,7 +25,7 @@ export const Nav = styled.div`
 export const NavItem = styled.div`
     line-height: 56px;
     padding: 0 15px;
-    front-size: 17px;
+    font-size: 17px;
     color: #333;
     &.left {
         float: left;
@@ -118,7 +118,7 @@ export const SearchInfoSwitch = styled.span`
     font-size: 13px;
     cursor: pointer;
     .spin {
-        display: inline-block;
+        display: block;
         float: left;
         font-size:10px;
         margin-right: 2px;
