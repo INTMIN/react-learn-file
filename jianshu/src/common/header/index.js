@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import  CSSTransition from 'react-transition-group/CSSTransition';
-// 官方文档写错了这里不需要加{}所以导致的错误
-import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import  { actionCreators } from './store';
 import { actionCreators as loginActionCreators } from '../../pages/login/store';
 import { 

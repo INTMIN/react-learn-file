@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import Topic from './components/Topic';
 import List from './components/List';
 import Recommend from './components/Recommend';
 import Writer from './components/Writer';
-import {actionCreators} from './store';
+import { actionCreators } from './store';
 import {
     HomeWrapper, 
     HomeLeft, 

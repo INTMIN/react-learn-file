@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { DetailWrapper, Header, Content } from './style';
-import {actionCreators } from './store';
+import { actionCreators } from './store';
 
 class Detail extends PureComponent {
     render() {
