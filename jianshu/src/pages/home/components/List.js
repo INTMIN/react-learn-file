@@ -12,7 +12,7 @@ render(){
             {
                 list.map((item, index) => {
                     return (
-                        <Link key={index} to='./detail'>
+                        <Link key={index} to={'./detail/' + item.get('id')}>
                         <ListItem >
                             <img className='pic' src={item.get('imgUrl')} alt="240"/>
                             <ListInfo>
