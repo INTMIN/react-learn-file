@@ -4,6 +4,7 @@ import { DetailWrapper, Header, Content } from './style';
 import { actionCreators } from './store';
 
 class Detail extends PureComponent {
+
     render() {
         // console.log(this.props.match.params.id);
         return (
@@ -13,13 +14,14 @@ class Detail extends PureComponent {
             </DetailWrapper>
         )
     }
-    componentDidMount(){
+
+    componentDidMount() {
         this.props.getDetail(this.props.match.params.id);
     }
 }
 
 const mapStateToProps = (state) => ({
-    title:state.getIn(['detail', 'title']),
+    title: state.getIn(['detail', 'title']),
     content: state.getIn(['detail', 'content'])
 });
 
