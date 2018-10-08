@@ -18,11 +18,16 @@
         return <h1>现在的时间是北京时间 ：{props.date.toLocaleTimeString()}</h1>;
     }
         class Clock extends React.Component {
-            constructor(props){
+            constructor(props) {
                 super(props);
                 this.state = {date: new Date()};
             }
-            // 生命周期函数 componentDidMount()
+            // constructor(props){
+            //     super(props); 
+            // 构造函数  初始化props
+            // this.state = {date: new Date()};
+            // 设置date的值
+            // 生命周期函数 componentDidMount()只在加载时运行一次
             componentDidMount() {
                 this.timeID = setInterval(
                     // var f = ([参数]) => 表达式（单一）
