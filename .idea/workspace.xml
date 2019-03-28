@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bf00495-56c2-4f1c-bf0d-ec2e2aba4009" name="Default Changelist" comment="" />
+    <list default="true" id="9bf00495-56c2-4f1c-bf0d-ec2e2aba4009" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/baidumapdemo/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/baidumapdemo" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-4" />
@@ -36,6 +48,12 @@
               <item name="react-learn-file" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-learn-file" type="462c0819:PsiDirectoryNode" />
               <item name="baidumapdemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-learn-file" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-learn-file" type="462c0819:PsiDirectoryNode" />
+              <item name="baidumapdemo" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -72,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1553740274375</updated>
       <workItem from="1553740279696" duration="313000" />
-      <workItem from="1553741110840" duration="689000" />
+      <workItem from="1553741110840" duration="1322000" />
     </task>
     <task id="LOCAL-00001" summary="测试百度地图的在react项目中的使用">
       <created>1553740493124</created>
@@ -85,7 +103,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1002000" />
+    <option name="totallyTimeSpent" value="1635000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -131,5 +149,10 @@
     <option name="LIMIT_HISTORY" value="false" />
     <MESSAGE value="测试百度地图的在react项目中的使用" />
     <option name="LAST_COMMIT_MESSAGE" value="测试百度地图的在react项目中的使用" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/baidumapdemo/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
   </component>
 </project>
