@@ -3,14 +3,15 @@ import './App.css';
 
 class App extends Component {
   componentDidMount() {
-    console.log(window)
+    // console.log(window)
     // const {BMap,BMAP_STATUS_SUCCESS}=window
     const {BMap}=window;
     let map = new BMap.Map('allmap');
-    map.centerAndZoom(new BMap.Point(116.404,39.915),11);
+    map.centerAndZoom(new BMap.Point(121.479246,31.239016),12);
+    // 初始化地图,设置中心点坐标和地图级别
 
-    let p1=new BMap.Point(116.301934,39.977552);
-    let p2 = new BMap.Point(116.508328,39.919141);
+    let p1=new BMap.Point(121.481941,31.234308);
+    let p2 = new BMap.Point(121.506375,31.244636);
 
     let driving = new BMap.DrivingRoute(map,{renderOptions:{map:map,autoViewport:true}})
     driving.search(p1,p2);
