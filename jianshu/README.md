@@ -1,4 +1,4 @@
-#[![Build status](https://mintext.visualstudio.com/MyFirstProject/_apis/build/status/react-demo)](https://mintext.visualstudio.com/MyFirstProject/_build/latest?definitionId=-1)
+[![Build status](https://mintext.visualstudio.com/MyFirstProject/_apis/build/status/react-demo)](https://mintext.visualstudio.com/MyFirstProject/_build/latest?definitionId=-1)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
