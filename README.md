@@ -3,3 +3,9 @@
 
 https://intmin.github.io/react-learn-file/bootstrap%20test.html
 bootstrap示例网页
+```
+## License
+
+Copyright (c) min. All rights reserved.
+
+Licensed under the [MIT](LICENSE.txt) license.
