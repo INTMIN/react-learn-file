@@ -7,6 +7,6 @@ bootstrap示例网页
 
 ## License
 
-Copyright (c) min. All rights reserved.
+Copyright (c) min Corporation. All rights reserved.
 
 Licensed under the [MIT](LICENSE.txt) license.
