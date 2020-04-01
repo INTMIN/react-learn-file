@@ -1,6 +1,7 @@
-
 // ref: https://umijs.org/config/
-export default {
+import { defineConfig } from 'umi';
+
+export default defineConfig({
   // treeShaking: true,
   dva: {
     immer: true,
@@ -9,18 +10,19 @@ export default {
     loading: '@/loading',
   },
   title: 'react hooks',
-  hash:true,
-  ignoreMomentLocale:true,
+  hash: true,
+  ignoreMomentLocale: true,
   targets: {
     ie: 11,
+  },
+  polyfill: {
+    imports: ['core-js/stable'],
   },
   routes: [
     {
       path: '/',
       component: '../layouts/index',
-      routes: [
-        { path: '/', component: '../pages/index' }
-      ]
-    }
+      routes: [{ path: '/', component: '../pages/index' }],
+    },
   ],
-}
+});
