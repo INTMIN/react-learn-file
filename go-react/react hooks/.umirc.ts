@@ -2,7 +2,6 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
-  // treeShaking: true,
   dva: {
     immer: true,
   },
@@ -15,6 +14,8 @@ export default defineConfig({
   targets: {
     ie: 11,
   },
+  lessLoader: { javascriptEnabled: true },
+  cssLoader: {},
   polyfill: {
     imports: ['core-js/stable'],
   },
