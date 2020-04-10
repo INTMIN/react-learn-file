@@ -19,6 +19,11 @@ export default defineConfig({
   polyfill: {
     imports: ['core-js/stable'],
   },
+  // 可解析src为项目src
+  alias: {
+    src: require('path').resolve(__dirname, './src'),
+  },
+
   routes: [
     {
       path: '/',
