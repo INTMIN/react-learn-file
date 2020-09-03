@@ -2,6 +2,7 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
+  base: '/',
   dva: {
     immer: true,
   },
@@ -11,17 +12,17 @@ export default defineConfig({
   title: 'react hooks',
   hash: true,
   ignoreMomentLocale: true,
-  targets: {
-    ie: 11,
-  },
   lessLoader: { javascriptEnabled: true },
   cssLoader: {},
+  nodeModulesTransform: {
+    type: 'none',
+    exclude: [], // 可解析src为项目src
+    alias: {
+      src: require('path').resolve(__dirname, './src'),
+    },
+  },
   polyfill: {
     imports: ['core-js/stable'],
-  },
-  // 可解析src为项目src
-  alias: {
-    src: require('path').resolve(__dirname, './src'),
   },
 
   routes: [
@@ -31,4 +32,13 @@ export default defineConfig({
       routes: [{ path: '/', component: '../pages/index' }],
     },
   ],
+
+  // 可解析src为项目src
+  alias: {
+    src: require('path').resolve(__dirname, './src'),
+  },
+
+  targets: {
+    ie: 11,
+  },
 });

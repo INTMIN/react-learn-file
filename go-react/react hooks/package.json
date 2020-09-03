@@ -9,12 +9,11 @@
   },
   "dependencies": {
     "dva": "^2.6.0-beta.6",
-    "antd": "^4.0.3",
+    "antd": "4.3.1",
     "react": "^16.12.0",
     "qs": "^6.9.1",
     "cross-env": "^6.0.3",
-    "react-dom": "^16.12.0",
-    "umi-request": "^1.2.19"
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
     "@umijs/preset-react": "^1.3.0",
@@ -28,7 +27,8 @@
     "husky": "^0.14.3",
     "lint-staged": "^10.0.8",
     "react-test-renderer": "^16.7.0",
-    "umi": "^3.0.16",
+    "umi": "^3.2.3",
+    "umi-request": "^1.2.19",
     "prettier": "^1.19.1"
   },
   "lint-staged": {
