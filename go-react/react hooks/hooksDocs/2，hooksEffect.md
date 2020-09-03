@@ -381,7 +381,7 @@ componentDidUpdate(prevProps) {
 
 反观 Function Component 中利用 `useCallback` 封装的取数函数，可以直接作为依赖传入 `useEffect`，**`useEffect` 只要关心取数函数是否变化，而取数参数的变化在 `useCallback` 时关心，再配合 [eslint](https://github.com/facebook/react/issues/14920) 插件的扫描，能做到 依赖不丢、逻辑内聚，从而容易维护。**
 
-## 更更更内聚
+## 生命周期函数替换
 
 除了函数依赖逻辑内聚之外，我们再看看取数的全过程：
 
