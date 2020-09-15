@@ -3,9 +3,11 @@
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
+    "dev": "cross-env UMI_ENV=dev umi build",
     "test": "umi test",
     "lint": "eslint {src,mock,tests}/**/*.{js,jsx} --fix",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "analyze": "cross-env ANALYZE=1 umi build"
   },
   "dependencies": {
     "antd": "4.5.2",
