@@ -1,7 +1,7 @@
 import XLSX from 'xlsx';
 
 
-function exportExcel(headers, data, fileName = '请假记录表.xlsx') {
+const exportExcel = (headers, data, fileName = '测试的excel.xlsx') => {
   const _headers = headers
     .map((item, i) => Object.assign({}, { key: item.key, title: item.title, position: String.fromCharCode(65 + i) + 1 }))
     .reduce((prev, next) => Object.assign({}, prev, { [next.position]: { key: next.key, v: next.title } }), {});
@@ -38,3 +38,6 @@ function exportExcel(headers, data, fileName = '请假记录表.xlsx') {
   // 导出 Excel
   XLSX.writeFile(wb, fileName);
 }
+
+
+export default exportExcel;

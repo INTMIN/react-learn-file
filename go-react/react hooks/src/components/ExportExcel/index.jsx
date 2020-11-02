@@ -1,5 +1,7 @@
 import XLSX from 'xlsx';
 import React, {useState, useEffect} from 'react';
+
+
 function importExcel(file) {
 
   // 获取上传的文件对象
@@ -31,7 +33,7 @@ function importExcel(file) {
   fileReader.readAsBinaryString(files[0]);
 
 }
-function exportExcel(headers, data, fileName = '请假记录表.xlsx') {
+function exportExcel(headers, data, fileName = '测试导出的excel.xlsx') {
   const _headers = headers
     .map((item, i) => Object.assign({}, { key: item.key, title: item.title, position: String.fromCharCode(65 + i) + 1 }))
     .reduce((prev, next) => Object.assign({}, prev, { [next.position]: { key: next.key, v: next.title } }), {});
