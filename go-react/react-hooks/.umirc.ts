@@ -14,16 +14,16 @@ export default defineConfig({
   ignoreMomentLocale: true,
   // lessLoader: { javascriptEnabled: true },
   cssLoader: {},
-  nodeModulesTransform: {
-    type: 'none',
-    exclude: [], // 可解析src为项目src
-  },
+  // nodeModulesTransform: {
+  //   type: 'none',
+  //   exclude: [], // 可解析src为项目src
+  // },
   alias: {
     src: require('path').resolve(__dirname, './src'),
   },
-  polyfill: {
-    imports: ['core-js/stable'],
-  },
+  // polyfill: {
+  //   imports: ['core-js/stable'],
+  // },
 
   routes: [
     {

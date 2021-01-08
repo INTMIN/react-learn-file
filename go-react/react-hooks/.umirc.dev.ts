@@ -13,17 +13,19 @@ export default defineConfig({
   hash: true,
   ignoreMomentLocale: true,
   // lessLoader: { javascriptEnabled: true },
+  runtimePublicPath:true,
+  publicPath:'https://intmin.github.io/react-learn-file/go-react/react-hooks/dist/',
   cssLoader: {},
-  nodeModulesTransform: {
-    type: 'none',
-    exclude: [], // 可解析src为项目src
-  },
+  // nodeModulesTransform: {
+  //   type: 'none',
+  //   exclude: [], // 可解析src为项目src
+  // },
   alias: {
     src: require('path').resolve(__dirname, './src'),
   },
-  polyfill: {
-    imports: ['core-js/stable'],
-  },
+  // polyfill: {
+  //   imports: ['core-js/stable'],
+  // },
 
   routes: [
     {
