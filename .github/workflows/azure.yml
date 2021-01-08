@@ -45,10 +45,10 @@ jobs:
         npm run build
         git pull
         git push 
-    - name: push
-      run: |
-        git remote add origin MINTEXT@vs-ssh.visualstudio.com:v3/MINTEXT/react-learn/react-learn
-        git push -u origin master 
+#     - name: push
+#       run: |
+#         git remote add origin MINTEXT@vs-ssh.visualstudio.com:v3/MINTEXT/react-learn/react-learn
+#         git push -u origin master 
 #     - name: 'Deploy to Azure WebApp'
 #       uses: azure/webapps-deploy@v1
 #       with:
