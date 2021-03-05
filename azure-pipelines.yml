@@ -24,7 +24,7 @@ steps:
     cd sync
     git clone https://github.com/INTMIN/react-learn-file.git
     cd react-learn-file
-    git remote add azure https://mintext.visualstudio.com/react-learn/_git/react-learn
+    git remote add azure  https://MINTEST:vehyol3vc2ceadekm3a76qvtyfwof3x7u4emnkeg6wmsfqvwxlia@dev.azure.com/https://mintext.visualstudio.com/react-learn/_git/react-learn
     git branch -D $(test)
     git checkout -b $(test)
         
