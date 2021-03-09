@@ -23,7 +23,7 @@ function cleanup {
   echo 'Cleaning up.'
   cd "$root_path"
   # Uncomment when snapshot testing is enabled by default:
-  # rm ./packages/react-scripts/template/src/__snapshots__/App.test.js.snap
+  # rm ./packages/react-scripts/template/src/__snapshots__/App.oneDrive.js.snap
   rm -rf "$temp_app_path"
   npm set registry "$original_npm_registry_url"
   yarn config set registry "$original_yarn_registry_url"
@@ -192,7 +192,7 @@ exists build/favicon.ico
 # Run tests with CI flag
 CI=true yarn test
 # Uncomment when snapshot testing is enabled by default:
-# exists src/__snapshots__/App.test.js.snap
+# exists src/__snapshots__/App.oneDrive.js.snap
 
 # Test the server
 yarn start --smoke-test
@@ -222,10 +222,10 @@ exists build/favicon.ico
 # Run tests, overriding the watch option to disable it.
 # `CI=true yarn test` won't work here because `yarn test` becomes just `jest`.
 # We should either teach Jest to respect CI env variable, or make
-# `scripts/test.js` survive ejection (right now it doesn't).
+# `scripts/oneDrive.js` survive ejection (right now it doesn't).
 yarn test --watch=no
 # Uncomment when snapshot testing is enabled by default:
-# exists src/__snapshots__/App.test.js.snap
+# exists src/__snapshots__/App.oneDrive.js.snap
 
 # Test the server
 yarn start --smoke-test
