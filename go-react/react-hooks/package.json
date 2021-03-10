@@ -10,14 +10,14 @@
     "analyze": "cross-env ANALYZE=1 umi build"
   },
   "dependencies": {
-    "antd": "4.5.2",
+    "antd": "^4.5.2",
     "qs": "^6.9.1",
     "cross-env": "^7.0.2",
     "react-dom": "16.13.0",
     "react": "16.13.0",
     "react-id-swiper": "^4.0.0",
     "swiper": "^6.2.0",
-    "umi": "3.2.5",
+    "umi": "^3.2.5",
     "umi-request": "^1.3.4"
   },
   "devDependencies": {
