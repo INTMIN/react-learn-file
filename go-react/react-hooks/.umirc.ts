@@ -7,6 +7,8 @@ export default defineConfig({
   dva: {
     immer: true
   },
+  mfsu: {},
+  webpack5: {},
   dynamicImport: {
     loading: "@/loading"
   },
