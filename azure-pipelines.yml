@@ -39,10 +39,10 @@ steps:
     # git fetch upstream --tags
     # git push origin --all
 
-    git branch -D test
+    # git branch -D test
     git checkout -b test
         
-    git push -d azure test
-    git push -u azure test --force
+    git push -d azure master
+    git push -u azure master --force
   
   displayName: 'add code'
