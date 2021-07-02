@@ -1,0 +1,44 @@
+.wrap {
+  width: 100%;
+  min-height: 100vh;
+  .content {
+    width: 80%;
+    margin: auto;
+    .formRow {
+      padding-top: 100px;
+    }
+  }
+  :global {
+    .ant-select {
+      color: white;
+    }
+
+    .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+      background-color: transparent;
+      border: 1px solid #e7bd88;
+    }
+
+    .ant-select-arrow {
+      color: #e7bd88;
+    }
+    .ant-radio-group {
+      border: 1px solid #e0be90;
+      border-radius: 15px;
+    }
+
+    .ant-radio-button-wrapper {
+      background: transparent;
+      color: #e0be90;
+      opacity: 0.5;
+      border: none;
+    }
+
+    .ant-radio-button-wrapper:hover {
+      opacity: 1;
+    }
+
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+      opacity: 1;
+    }
+  }
+}

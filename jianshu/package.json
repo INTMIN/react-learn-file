@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/styled-components": "^3.0.1",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "immutable": "^3.8.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",

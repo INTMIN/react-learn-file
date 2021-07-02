@@ -1,0 +1,11 @@
+---
+dist: trusty
+language: node_js
+node_js:
+  - 9
+cache:
+  directories:
+  - node_modules
+install: true
+script:
+ - 'tasks/e2e-simple.sh'
