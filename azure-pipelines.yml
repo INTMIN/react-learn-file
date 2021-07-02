@@ -16,9 +16,14 @@ pool:
 # - script: |
 #     echo Add other tasks to build, test, and deploy your project.
 #     echo See https://aka.ms/yaml
-#   displayName: 'Run a multi-line script'
+steps:
+- uses: azure/webapps-deploy@v2
+  with:
+    publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+
 
 steps:
+
 - script: |
     mkdir sync
     cd sync
@@ -26,9 +31,9 @@ steps:
     
     cd react-learn-file
     git remote add azure  https://MINTEST:vehyol3vc2ceadekm3a76qvtyfwof3x7u4emnkeg6wmsfqvwxlia@dev.azure.com/MINTEXT/mintext.visualstudio.com/react-learn/_git/react-learn
-    git branch -D $(master)
-    git checkout -b $(master)
+    git branch -D $(test)
+    git checkout -b $(test)
         
-    git push -d azure $(master)
-    git push -u azure $(master) --force
+    git push -d azure $(test)
+    git push -u azure $(test) --force
     displayName: 'add code'
