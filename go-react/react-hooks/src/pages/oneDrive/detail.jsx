@@ -69,7 +69,8 @@ const Detail = props => {
   ];
 
   const {
-    oneDrive: { data }
+    oneDrive: { data },
+    loading
   } = props;
 
   return (
@@ -78,6 +79,7 @@ const Detail = props => {
         style={{
           overflow: "hidden"
         }}
+        loading={loading}
         columns={columns}
         rowKey={record => record.id}
         // expandRowByClick

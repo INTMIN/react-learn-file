@@ -1,4 +1,4 @@
-import { Button, Col, Form, Radio, Row, Select, Table } from "antd";
+import { Breadcrumb, Button, Col, Form, Radio, Row, Select, Table } from "antd";
 import React, { useEffect, useState } from "react";
 import { connect, useDispatch, history } from "umi";
 import styles from "./index.less";
@@ -14,6 +14,7 @@ const OneDriveList = props => {
   //   pageSize: 10,
   // });
   const [formValues, setFormValues] = useState({});
+  const [nowPath, setNowPath] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const OneDriveList = props => {
     return () => {
       // cleanup
     };
-  }, [formValues]);
+  }, [formValues, nowPath]);
   // useEffect(() => {
   //    console.log(expendKeyArr);
   // }, [expendKeyArr]);
@@ -30,7 +31,8 @@ const OneDriveList = props => {
   const loadData = type => {
     let params = {
       // ...pagination,
-      ...formValues
+      ...formValues,
+      path: nowPath.length ? nowPath.join("/") : undefined
     };
     // if (type !== "first") {
     //   params.page = pagination.page;
@@ -47,6 +49,19 @@ const OneDriveList = props => {
   const valueChange = (changeValues, allValues) => {
     // console.log(changeValues, allValues);
     setFormValues({ ...allValues });
+  };
+
+  const changeNowPath = path => {
+    let newPath = [...nowPath];
+    newPath.push(path);
+    setNowPath(newPath);
+  };
+
+  const GoPath = path => {
+    let newPath = [...nowPath];
+    const findIndex = newPath.findIndex(item => item === path);
+    const finaPath = newPath.slice(0, findIndex + 1);
+    setNowPath(finaPath);
   };
 
   // const handleChange = (pagination, filtersArg, sorter) => {
@@ -75,16 +90,7 @@ const OneDriveList = props => {
       key: "x",
       render: (_, record) =>
         record.type === "folder" && record.childCount > 0 ? (
-          <Button
-            onClick={() =>
-              history.push({
-                pathname: `/oneDrive/detail`,
-                state: record.path
-              })
-            }
-          >
-            查看
-          </Button>
+          <Button onClick={() => changeNowPath(record.name)}>查看</Button>
         ) : (
           <a
             href={`https://1197052014571378.cn-beijing.fc.aliyuncs.com/2016-08-15/proxy/henshangOneDrive/OneDriveApi/download?id=${record.id}`}
@@ -134,7 +140,8 @@ const OneDriveList = props => {
 
   // console.log(data)
   const {
-    oneDrive: { data }
+    oneDrive: { data },
+    loading
   } = props;
   return (
     <div className={styles.wrap}>
@@ -143,10 +150,25 @@ const OneDriveList = props => {
           form={form}
           name="topicBrandForm"
           onValuesChange={valueChange}
-          initialValues={{ sort: "4", time: "3" }}
+          initialValues={{ time: "3" }}
         >
           <Row className={styles.formRow} justify="space-between">
             <Col>
+              <Breadcrumb>
+                <Breadcrumb.Item>主页</Breadcrumb.Item>
+                {nowPath.map(item => (
+                  <Breadcrumb.Item key={item}>
+                    <span
+                      style={{ cursor: "pointer" }}
+                      onClick={() => GoPath(item)}
+                    >
+                      {item}
+                    </span>
+                  </Breadcrumb.Item>
+                ))}
+              </Breadcrumb>
+            </Col>
+            {/* <Col>
               <Form.Item name="sort">
                 <Radio.Group>
                   <Radio.Button value="4">4</Radio.Button>
@@ -155,7 +177,7 @@ const OneDriveList = props => {
                   <Radio.Button value="1">1</Radio.Button>
                 </Radio.Group>
               </Form.Item>
-            </Col>
+            </Col> */}
             <Col>
               <Form.Item name="time">
                 <Select style={{ width: 150 }}>
@@ -173,6 +195,7 @@ const OneDriveList = props => {
             overflow: "hidden"
           }}
           columns={columns}
+          loading={loading}
           rowKey={record => record.id}
           expandRowByClick
           dataSource={data}
