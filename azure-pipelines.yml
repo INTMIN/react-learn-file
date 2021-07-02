@@ -32,7 +32,7 @@ steps:
     
     git clone https://github.com/INTMIN/react-learn-file.git
     cd react-learn-file
-    git remote add azure  https://MINTEXT:vehyol3vc2ceadekm3a76qvtyfwof3x7u4emnkeg6wmsfqvwxlia@dev.azure.com/MINTEXT/mintext.visualstudio.com/react-learn-file/_git/react-learn-file
+    git remote add azure  https://MINTEXT:ls7l5biepalyc33r26ugmvplxzfnlk2e2ezkvi7ialm5vlisbw3q@dev.azure.com/MINTEXT/mintext.visualstudio.com/react-learn-file/_git/react-learn-file
    
     
     # git remote add --mirror=fetch upstream https://github.com/INTMIN/react-learn-file.git
@@ -40,7 +40,7 @@ steps:
     # git push origin --all
 
     # git branch -D test
-    git checkout -b test
+    # git checkout -b test
         
     git push -d azure master
     git push -u azure master --force
