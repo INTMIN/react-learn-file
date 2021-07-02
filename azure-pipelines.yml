@@ -30,9 +30,10 @@ steps:
     
     # git clone --bare https://mintext.visualstudio.com/react-learn-file/_git/react-learn-file
     
-    # git clone https://github.com/INTMIN/react-learn-file.git
-    git remote add azure  https://MINTEXT:vehyol3vc2ceadekm3a76qvtyfwof3x7u4emnkeg6wmsfqvwxlia@dev.azure.com/MINTEXT/mintext.visualstudio.com/react-learn-file/_git/react-learn-file
+    git clone https://github.com/INTMIN/react-learn-file.git
     cd react-learn-file
+    git remote add azure  https://MINTEXT:vehyol3vc2ceadekm3a76qvtyfwof3x7u4emnkeg6wmsfqvwxlia@dev.azure.com/MINTEXT/mintext.visualstudio.com/react-learn-file/_git/react-learn-file
+   
     
     # git remote add --mirror=fetch upstream https://github.com/INTMIN/react-learn-file.git
     # git fetch upstream --tags
