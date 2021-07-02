@@ -30,10 +30,15 @@ steps:
     git clone https://github.com/INTMIN/react-learn-file.git
     
     cd react-learn-file
-    git remote add azure  https://MINTEXT:vehyol3vc2ceadekm3a76qvtyfwof3x7u4emnkeg6wmsfqvwxlia@dev.azure.com/MINTEXT/mintext.visualstudio.com/react-learn-file/_git/github.com/INTMIN/react-learn-file.git
-    git branch -D $(test)
-    git checkout -b $(test)
+    # git remote add azure  https://MINTEXT:vehyol3vc2ceadekm3a76qvtyfwof3x7u4emnkeg6wmsfqvwxlia@dev.azure.com/MINTEXT/mintext.visualstudio.com/react-learn-file/_git/react-learn-file
+    
+    git remote add --mirror=fetch upstream https://github.com/INTMIN/react-learn-file.git
+    git fetch upstream --tags
+    git push origin --all
+
+    # git branch -D $(test)
+    # git checkout -b $(test)
         
-    git push -d azure $(test)
-    git push -u azure $(test) --force
+    # git push -d azure $(test)
+    # git push -u azure $(test) --force
     displayName: 'add code'
