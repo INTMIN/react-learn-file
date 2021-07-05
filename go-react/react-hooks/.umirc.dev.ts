@@ -3,6 +3,7 @@ import { defineConfig } from "umi";
 import routers from "./routers";
 
 export default defineConfig({
+  "404":true,
   base: "/",
   dva: {
     immer: true
