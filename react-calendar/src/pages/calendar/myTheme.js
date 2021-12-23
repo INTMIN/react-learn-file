@@ -27,7 +27,7 @@ export default {
   'month.day.fontSize': '16px',
 
   // month schedule style
-  'month.schedule.height': '18px',
+  'month.schedule.height': '38px',
   'month.schedule.marginTop': '2px',
   'month.schedule.marginLeft': '10px',
   'month.schedule.marginRight': '10px',
@@ -108,7 +108,7 @@ export default {
 
   // week daygrid schedule style
   'week.dayGridSchedule.borderRadius': '0',
-  'week.dayGridSchedule.height': '18px',
+  'week.dayGridSchedule.height': '58px',
   'week.dayGridSchedule.marginTop': '2px',
   'week.dayGridSchedule.marginLeft': '10px',
   'week.dayGridSchedule.marginRight': '10px'
