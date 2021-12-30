@@ -3,13 +3,13 @@ import { defineConfig } from "umi";
 import routers from "./routers";
 
 export default defineConfig({
-  "404":true,
+  "404": true,
   base: "/",
   dva: {
     immer: true
   },
-  mfsu: {},
-  webpack5: {},
+  // mfsu: {},
+  // webpack5: {},
   dynamicImport: {
     loading: "@/loading"
   },
@@ -21,42 +21,19 @@ export default defineConfig({
   publicPath:
     "https://intmin.github.io/react-learn-file/go-react/react-hooks/dist/",
   cssLoader: {},
-  // nodeModulesTransform: {
-  //   type: 'none',
-  //   exclude: [], // 可解析src为项目src
-  // },
+
+  chainWebpack(config) {
+    config.module // 配置raw-loader
+      .rule("md")
+      .test(/\.md$/)
+      .use("raw-loader")
+      .loader("raw-loader");
+  },
   alias: {
     src: require("path").resolve(__dirname, "./src")
   },
-  // polyfill: {
-  //   imports: ['core-js/stable'],
-  // },
 
   routes: routers,
-
-  chainWebpack: function(config) {
-    config.merge({
-      optimization: {
-        minimize: true,
-        splitChunks: {
-          chunks: "all",
-          minSize: 30000,
-          minChunks: 3,
-          automaticNameDelimiter: ".",
-          cacheGroups: {
-            vendor: {
-              name: "vendors",
-              // @ts-ignore
-              test({ resource }) {
-                return /[\\/]node_modules[\\/]/.test(resource);
-              },
-              priority: 10
-            }
-          }
-        }
-      }
-    });
-  },
 
   targets: {
     ie: 11
