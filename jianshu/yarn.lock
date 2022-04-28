@@ -400,9 +400,9 @@ async-each@^1.0.1:
   integrity sha1-tyfb+H12UWAvBvTUrDh/R9kbDL8=
 
 async@^2.1.2, async@^2.1.4, async@^2.4.1, async@^2.6.2:
-  version "2.6.3"
-  resolved "https://registry.nlark.com/async/download/async-2.6.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fasync%2Fdownload%2Fasync-2.6.3.tgz#d72625e2344a3656e3a3ad4fa749fa83299d82ff"
-  integrity sha1-1yYl4jRKNlbjo61Pp0n6gymdgv8=
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/async/-/async-2.6.4.tgz#706b7ff6084664cd7eae713f6f965433b5504221"
+  integrity sha512-mzo5dfJYwAn29PeiJ0zvwTo04zj8HDJj0Mn8TD7sno7q12prdbnasKJHhkm2c1LgrhlJ0teaea8860oxi51mGA==
   dependencies:
     lodash "^4.17.14"
 
@@ -6872,10 +6872,10 @@ redux-immutable@4.0.0:
   resolved "https://registry.npm.taobao.org/redux-immutable/download/redux-immutable-4.0.0.tgz#3a1a32df66366462b63691f0e1dc35e472bbc9f3"
   integrity sha1-Ohoy32Y2ZGK2NpHw4dw15HK7yfM=
 
-redux-thunk@^2.3.0:
+redux-thunk@2.3.0:
   version "2.3.0"
-  resolved "https://registry.npm.taobao.org/redux-thunk/download/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
-  integrity sha1-UcLBmhhe1Rh6qpotCLZm0NZGdiI=
+  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
+  integrity sha512-km6dclyFnmcvxhAcrQV2AkZmPQjzPDjgVlQtR0EQjxZPyJ0BnMf3in1ryuR8A2qU0HldVRfxYXbFSKlI3N7Slw==
 
 redux@4.0.0:
   version "4.0.0"
