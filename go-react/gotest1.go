@@ -12,7 +12,7 @@ import (
 func main() {
 	fetchUrl()
 
-	fmt.Printf("skjhdjakhjahjkashdkjasdkja", main)
+	fmt.Printf("skjhdjakhjahjkashdkjasdkja%d", main)
 	change()
 	inits()
 }
@@ -20,9 +20,10 @@ func main() {
 //var a int
 
 func change() {
-	var a = 1
+	var a = "1%d"
 
-	fmt.Printf(string(a))
+	fmt.Printf(a)
+	// fmt.Printf(string(a))
 	//var b []int
 	numbers := make([]int, 5, 10)
 	numbers = append(numbers, 1, 2, 3, 4)
