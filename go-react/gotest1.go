@@ -4,9 +4,12 @@ import (
 	"fmt"
 	"math/rand"
 	"time"
+	"net/http"
+	"net.url"
 )
 
 func main() {
+	// fetchUrl()
 	fmt.Printf("skjhdjakhjahjkashdkjasdkja", main)
 	change()
 	inits()
@@ -52,4 +55,21 @@ func inits() {
 	p = &a
 	fmt.Println(p)  // 指针地址
 	fmt.Println(*p) // 指针指向地址的值
+}
+
+
+func fetchUrl(t *testing.T)  {
+	targetUrl := "http://testhans.json"
+	payload := url.Values{"key":{'value'},id:'123'}
+	req,_ := http.NewRequest("GET",targetUrl,payload)
+	req.Header.Add("Content-Type","application/json")
+	response, err :=http.DefaultClient.Do(req)
+
+	if err != nil {
+		t.Error(err)
+		panic(err)
+	}
+
+	defer response.Body.Close()
+	t.Log(response)
 }
