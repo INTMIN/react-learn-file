@@ -12,7 +12,7 @@ import (
 func main() {
 	fetchUrl()
 
-	fmt.Printf("skjhdjakhjahjkashdkjasdkja%d", main)
+	fmt.Printf("%#v\n", main)
 	change()
 	inits()
 }
