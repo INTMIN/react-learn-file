@@ -2,14 +2,16 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"math/rand"
-	"time"
 	"net/http"
-	"net.url"
+	"os"
+	"time"
 )
 
 func main() {
-	// fetchUrl()
+	fetchUrl()
+
 	fmt.Printf("skjhdjakhjahjkashdkjasdkja", main)
 	change()
 	inits()
@@ -57,19 +59,26 @@ func inits() {
 	fmt.Println(*p) // 指针指向地址的值
 }
 
+func fetchUrl() {
+	targetUrl := "https://github.com/notifications/indicator"
+	req, _ := http.NewRequest("GET", targetUrl, nil)
+	req.Header.Add("Content-Type", "application/json")
+	response, err := http.DefaultClient.Do(req)
 
-func fetchUrl(t *testing.T)  {
-	targetUrl := "http://testhans.json"
-	payload := url.Values{"key":{'value'},id:'123'}
-	req,_ := http.NewRequest("GET",targetUrl,payload)
-	req.Header.Add("Content-Type","application/json")
-	response, err :=http.DefaultClient.Do(req)
-
+	bytes, err := ioutil.ReadAll(response.Body)
 	if err != nil {
-		t.Error(err)
-		panic(err)
+		fmt.Println(err, "http.post")
+		os.Exit(1)
 	}
 
 	defer response.Body.Close()
-	t.Log(response)
+	fmt.Println(string(bytes))
+
+}
+
+func HandleError(err error, when string) {
+	if err != nil {
+		fmt.Println(err, when)
+		os.Exit(1)
+	}
 }
