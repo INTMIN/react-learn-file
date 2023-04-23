@@ -11,8 +11,7 @@ import (
 
 func main() {
 	fetchUrl()
-
-	fmt.Printf("%#v\n", main)
+	// fmt.Printf("%#v\n", main)
 	change()
 	inits()
 }
