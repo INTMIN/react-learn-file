@@ -2,12 +2,16 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"math/rand"
+	"net/http"
+	"os"
 	"time"
 )
 
 func main() {
-	fmt.Printf("skjhdjakhjahjkashdkjasdkja", main)
+	fetchUrl()
+	// fmt.Printf("%#v\n", main)
 	change()
 	inits()
 }
@@ -15,9 +19,10 @@ func main() {
 //var a int
 
 func change() {
-	var a = 1
+	var a = "1%d"
 
-	fmt.Printf(string(a))
+	fmt.Printf(a)
+	// fmt.Printf(string(a))
 	//var b []int
 	numbers := make([]int, 5, 10)
 	numbers = append(numbers, 1, 2, 3, 4)
@@ -52,4 +57,28 @@ func inits() {
 	p = &a
 	fmt.Println(p)  // 指针地址
 	fmt.Println(*p) // 指针指向地址的值
+}
+
+func fetchUrl() {
+	targetUrl := "https://github.com/notifications/indicator"
+	req, _ := http.NewRequest("GET", targetUrl, nil)
+	req.Header.Add("Content-Type", "application/json")
+	response, err := http.DefaultClient.Do(req)
+
+	bytes, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		fmt.Println(err, "http.post")
+		os.Exit(1)
+	}
+
+	defer response.Body.Close()
+	fmt.Println(string(bytes))
+
+}
+
+func HandleError(err error, when string) {
+	if err != nil {
+		fmt.Println(err, when)
+		os.Exit(1)
+	}
 }
