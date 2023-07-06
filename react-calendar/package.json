@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "antd": "^4.17.4",
-    "cross-env": "7.0.2",
+    "cross-env": "7.0.3",
     "css-loader": "^6.5.1",
     "react": "16.13.0",
     "react-dom": "16.13.0",
