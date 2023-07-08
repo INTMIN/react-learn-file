@@ -53,10 +53,10 @@
   resolved "https://registry.nlark.com/@types/scheduler/download/@types/scheduler-0.16.2.tgz?cache=0&sync_timestamp=1629709152024&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fscheduler%2Fdownload%2F%40types%2Fscheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha1-GmL4lSVyPd4kuhsBsJK/XfitTTk=
 
-"@types/styled-components@3.0.1":
-  version "3.0.1"
-  resolved "https://registry.nlark.com/@types/styled-components/download/@types/styled-components-3.0.1.tgz?cache=0&sync_timestamp=1630748006447&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fstyled-components%2Fdownload%2F%40types%2Fstyled-components-3.0.1.tgz#0f591a38e005aeb10687e85eb078c92d9b988ed1"
-  integrity sha1-D1kaOOAFrrEGh+hesHjJLZuYjtE=
+"@types/styled-components@3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-3.0.5.tgz#b5460531e4627905c04577eee353cdd3343c43e6"
+  integrity sha512-LrcPeASryzy74l4BZriip0uYbOgpnYnr93xePk+IS5Ltml54PPDxVhhQw+/83JUVBd5gRjJyeF2l9xZnNqPDcA==
   dependencies:
     "@types/node" "*"
     "@types/react" "*"
@@ -7735,10 +7735,10 @@ style-loader@0.19.0:
     loader-utils "^1.0.2"
     schema-utils "^0.3.0"
 
-styled-components@3.4.9:
-  version "3.4.9"
-  resolved "https://registry.nlark.com/styled-components/download/styled-components-3.4.9.tgz?cache=0&sync_timestamp=1629798356811&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fstyled-components%2Fdownload%2Fstyled-components-3.4.9.tgz#519abeb351b37be5b7de6a15ff9e4efeb9d772da"
-  integrity sha1-UZq+s1Gze+W33moV/55O/rnXcto=
+styled-components@3.4.10:
+  version "3.4.10"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-3.4.10.tgz#9a654c50ea2b516c36ade57ddcfa296bf85c96e1"
+  integrity sha512-TA8ip8LoILgmSAFd3r326pKtXytUUGu5YWuqZcOQVwVVwB6XqUMn4MHW2IuYJ/HAD81jLrdQed8YWfLSG1LX4Q==
   dependencies:
     buffer "^5.0.3"
     css-to-react-native "^2.0.3"
