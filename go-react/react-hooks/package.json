@@ -28,7 +28,7 @@
   "devDependencies": {
     "@babel/polyfill": "^7.10.4",
     "@umijs/preset-react": "^1.3.0",
-    "babel-eslint": "^10.1.0",
+    "@babel/eslint-parser": "^7.11.0",
     "eslint": "^7.6.0",
     "eslint-config-umi": "^1.6.0",
     "eslint-plugin-flowtype": "^5.2.0",
