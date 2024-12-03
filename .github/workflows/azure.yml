@@ -21,7 +21,7 @@ env:
 jobs:
   build-and-deploy:
     name: build and test react file
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@master
     - name: Use Node.js ${{ env.NODE_VERSION }}
