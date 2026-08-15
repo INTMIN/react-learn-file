@@ -3994,10 +3994,10 @@ ignore@^3.3.3:
   resolved "https://registry.nlark.com/ignore/download/ignore-3.3.10.tgz#0a97fb876986e8081c631160f8f9f389157f0043"
   integrity sha1-Cpf7h2mG6AgcYxFg+PnziRV/AEM=
 
-immutable@3.8.2:
-  version "3.8.2"
-  resolved "https://registry.nlark.com/immutable/download/immutable-3.8.2.tgz?cache=0&sync_timestamp=1631833207402&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fimmutable%2Fdownload%2Fimmutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
-  integrity sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
+immutable@3.8.4:
+  version "3.8.4"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.4.tgz#af27c93537f09629c9d154a173cd55f7bfdc75fd"
+  integrity sha512-ZQv17KolYrYmsDoDB8N67zhIKsNi9mGYlk96y/yuxyAqJB2hLzSGSM7k/sB0/ZvO4kx27U9+fBeD/XlLGh/uXQ==
 
 import-lazy@^2.1.0:
   version "2.1.0"
